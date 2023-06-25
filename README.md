@@ -1,10 +1,10 @@
 # TODO
-Three day weather forecast for current location.
-Daily notifications of weather in current location.
-Testing:
+- Three day weather forecast for current location.
+- Daily notifications of weather in current location.
+- Testing:
    Unit.
    End-to-end.
-Containerization.
+- Containerization.
 
 
 # Node and npm Installation Guide
