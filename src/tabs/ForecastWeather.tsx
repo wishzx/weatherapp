@@ -23,7 +23,7 @@ const ForecastWeather = (props: CurrentWeatherProps) => {
     if (isError) {
       notifications.show({
         id: 'api-error',
-        title: "Couldn't retrieve current weather data",
+        title: "Couldn't retrieve forecast weather data",
         message: 'Press the refresh button to try again',
         color: 'red',
         withBorder: true,
