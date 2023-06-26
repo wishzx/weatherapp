@@ -40,12 +40,10 @@ export const ForecastCard = (props: ForecastCardProps) => {
           })}
         >
           <Group position="apart" px={15}>
-            <Text c="blue.2">{formattedDate} </Text>
             <Text c="blue.2">{formattedTime} </Text>
           </Group>
           <Box>{IconComponent}</Box>
           <Stack spacing={0}>
-            <Title order={6}>{props.subtitle || 'Clear Sky'}</Title>
             <Text size={12} c="dimmed" truncate>
               {props.title || '38'} °C
             </Text>

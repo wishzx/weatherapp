@@ -38,30 +38,30 @@ const Home = () => {
   }, [locationPermission]);
 
   const config = {
-    iconSize: '0.8rem',
+    iconSize: '1rem',
     padding: 'xs',
   };
 
   return (
     <>
-      <Tabs defaultValue="current">
+      <Tabs defaultValue="current" keepMounted={false}>
         <Tabs.List>
           <Tabs.Tab
             value="current"
             icon={<IconPhoto size={config.iconSize} />}
             disabled={locationPermission !== 'granted'}
           >
-            Current weather
+            Current
           </Tabs.Tab>
           <Tabs.Tab
             value="forecast"
             icon={<BsHourglass size={config.iconSize} />}
             disabled={locationPermission !== 'granted'}
           >
-            3 Day forecast
+            5 Day forecast
           </Tabs.Tab>
           <Tabs.Tab value="subscribe" icon={<LuCalendarDays size={config.iconSize} />} disabled={true}>
-            Subscribe to notifications
+            Subscribe
           </Tabs.Tab>
         </Tabs.List>
 

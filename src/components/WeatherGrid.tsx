@@ -15,8 +15,8 @@ const WeatherGrid = ({ data }: WeatherGridProps) => {
       spacing="lg"
       breakpoints={[
         { maxWidth: 'md', cols: 3, spacing: 'md' },
-        { maxWidth: 'sm', cols: 2, spacing: 'md' },
-        { maxWidth: 'xs', cols: 1, spacing: 'sm' },
+        { maxWidth: 'sm', cols: 3, spacing: 'md' },
+        { maxWidth: 'xs', cols: 2, spacing: 'xs' },
       ]}
     >
       <WeatherCard
