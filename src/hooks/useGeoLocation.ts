@@ -34,6 +34,9 @@ const useGeoLocation = (): {
         () => {
           setLocationPermission('denied');
         },
+        {
+          enableHighAccuracy: false,
+        },
       );
     } else {
       setLocationPermission('unsupported');
