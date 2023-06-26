@@ -43,7 +43,7 @@ const CurrentWeather = (props: CurrentWeatherProps) => {
     <Container my="md">
       <Stack>
         <Container>
-          {props.locationPermission == 'granted' && isLoading ? (
+          {props.locationPermission === 'waiting' || isLoading ? (
             <Loader h={45} color={orangeCustom} variant="dots" size="xl" />
           ) : (
             <Title>{data?.name || '-'} </Title>
