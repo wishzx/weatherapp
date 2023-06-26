@@ -17,6 +17,7 @@ export default function useForeCastWeather(
   if (results.data === undefined) {
     return {
       data: results.data,
+      formattedData: undefined,
       isLoading: results.isLoading,
       isError: results.isError,
       refetch: results.refetch,
@@ -26,7 +27,8 @@ export default function useForeCastWeather(
   const data = splitListByDay(results.data.list);
 
   return {
-    data: data,
+    data: results.data,
+    formattedData: data,
     isLoading: results.isLoading,
     isError: results.isError,
     refetch: results.refetch,
