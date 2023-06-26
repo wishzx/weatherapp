@@ -35,7 +35,7 @@ const useGeoLocation = (): {
           setLocationPermission('denied');
         },
         {
-          enableHighAccuracy: false,
+          enableHighAccuracy: true,
         },
       );
     } else {

@@ -11,7 +11,6 @@ const WeatherGrid = ({ data }: WeatherGridProps) => {
   return (
     <SimpleGrid
       cols={3}
-      mx={50}
       spacing="lg"
       breakpoints={[
         { maxWidth: 'md', cols: 3, spacing: 'md' },

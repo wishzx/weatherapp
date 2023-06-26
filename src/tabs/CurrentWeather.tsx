@@ -40,7 +40,7 @@ const CurrentWeather = (props: CurrentWeatherProps) => {
   }, [isError]);
 
   return (
-    <Container my="md">
+    <Container py={'10vh'} size={'sm'}>
       <Stack>
         <Container>
           {props.locationPermission === 'waiting' || isLoading ? (
