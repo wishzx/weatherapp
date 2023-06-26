@@ -23,3 +23,19 @@ export const queryClient = new QueryClient({
     },
   },
 });
+
+export function formatUnixTimestamp(unixTimestamp: number): [string, string] {
+  const date = new Date(unixTimestamp * 1000);
+  const daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+
+  const day = daysOfWeek[date.getUTCDay()];
+  const dayOfMonth = date.getUTCDate();
+
+  const hours = String(date.getUTCHours()).padStart(2, '0');
+  const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+
+  const formattedDate = `${day}, ${dayOfMonth}`;
+  const formattedTime = `${hours}:${minutes}`;
+
+  return [formattedDate, formattedTime];
+}
