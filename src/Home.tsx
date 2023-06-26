@@ -44,7 +44,7 @@ const Home = () => {
 
   return (
     <>
-      <Tabs defaultValue="current" keepMounted={false}>
+      <Tabs defaultValue="current">
         <Tabs.List>
           <Tabs.Tab
             value="current"
@@ -70,7 +70,7 @@ const Home = () => {
         </Tabs.Panel>
 
         <Tabs.Panel value="forecast" pt={config.padding}>
-          <ForecastWeather />
+          <ForecastWeather locationData={locationData} locationPermission={locationPermission} />
         </Tabs.Panel>
 
         <Tabs.Panel value="notification" pt={config.padding}>

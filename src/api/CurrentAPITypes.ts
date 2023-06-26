@@ -1,13 +1,3 @@
-export interface CurrentWeather {
-  id: number;
-  name: string;
-  description: string;
-  breed: string;
-  images: string[];
-  city: string;
-  state: string;
-}
-
 export interface CurrentWeatherAPIResponse {
   coord: {
     lon: number;

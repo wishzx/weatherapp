@@ -29,7 +29,7 @@ export const fetchForecastWeather = async (geoLocationData: GeoLocationData) => 
       `lat: ${geoLocationData.latitude} long: ${geoLocationData.longitude} fetch forecast weather not ok`,
     );
   }
-
+  console.log(apiRes);
   return apiRes.json();
 };
 

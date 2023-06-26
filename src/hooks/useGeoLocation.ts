@@ -39,7 +39,6 @@ const useGeoLocation = (): {
       setLocationPermission('unsupported');
     }
   };
-
   return { locationPermission, locationData };
 };
 

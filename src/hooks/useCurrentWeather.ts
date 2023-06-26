@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import fetchCurrentWeather from '../api/fetchCurrentWeather';
 import { GeoLocationData, GeoLocationPermission } from './useGeoLocation';
-import { CurrentWeatherAPIResponse } from '../api/APIResponsesTypes';
+import { CurrentWeatherAPIResponse } from '../api/CurrentAPITypes';
 
 export default function useCurrentWeather(geoLocationData: GeoLocationData, locationPermission: GeoLocationPermission) {
   const results = useQuery<CurrentWeatherAPIResponse>(

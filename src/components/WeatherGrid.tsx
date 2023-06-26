@@ -1,6 +1,6 @@
 import { SimpleGrid } from '@mantine/core';
 import WeatherCard from './WeatherCard';
-import { CurrentWeatherAPIResponse } from '../api/APIResponsesTypes';
+import { CurrentWeatherAPIResponse } from '../api/CurrentAPITypes';
 import { getHourAndMinuteFromTimestamp } from '../utils';
 
 interface WeatherGridProps {
