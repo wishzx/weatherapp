@@ -1,8 +1,10 @@
-# TODO
-- Three day weather forecast for current location.
+#DEMO
+
+https://weatherapp-5d0b9.web.app/
+
+#TODO
 - Daily notifications of weather in current location.
 - Testing:
-   Unit.
    End-to-end.
 - Containerization.
 
