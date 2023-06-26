@@ -1,4 +1,4 @@
-import { Box, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Box, Group, Image, Stack, Text } from '@mantine/core';
 
 import { formatUnixTimestamp, orangeCustom } from '../utils';
 

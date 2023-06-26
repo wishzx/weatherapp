@@ -1,6 +1,5 @@
 // mostly code from reactjs.org/docs/error-boundaries.html
 import { Component, ErrorInfo, ReactElement } from 'react';
-import { Link } from 'react-router-dom';
 
 class ErrorBoundary extends Component<{ children: ReactElement }> {
   state = { hasError: false };

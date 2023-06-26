@@ -8,6 +8,7 @@ interface WeatherGridProps {
 }
 
 const WeatherGrid = ({ data }: WeatherGridProps) => {
+  const config = { defaultIcon: '10d' };
   return (
     <SimpleGrid
       cols={3}
@@ -20,7 +21,7 @@ const WeatherGrid = ({ data }: WeatherGridProps) => {
     >
       <WeatherCard
         icon="other"
-        src={`https://openweathermap.org/img/wn/${data?.weather[0].icon || '10d'}@2x.png`}
+        src={`https://openweathermap.org/img/wn/${data?.weather[0].icon || config.defaultIcon}@2x.png`}
         subtitle={data?.weather[0].description}
       ></WeatherCard>
       <WeatherCard icon="Temperature" subtitle={data?.main.temp && `${data.main.temp}°C`}></WeatherCard>

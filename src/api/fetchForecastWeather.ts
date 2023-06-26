@@ -1,6 +1,5 @@
 import { GeoLocationData } from '../hooks/useGeoLocation';
-
-const API_KEY = 'f8a3a62c1c7c7d8e39956c2e270c9d50'; //in production move this secret to a .env on the server that call the openweather api instead
+import { API_KEY } from '../utils';
 
 export const fetchForecastWeather = async (geoLocationData: GeoLocationData) => {
   if (geoLocationData.latitude === null || geoLocationData.longitude === null) {
@@ -34,5 +33,3 @@ export const fetchForecastWeather = async (geoLocationData: GeoLocationData) => 
 };
 
 export default fetchForecastWeather;
-
-//http://api.openweathermap.org/geo/1.0/reverse?lat=4&lon=51&limit=1&appid=f8a3a62c1c7c7d8e39956c2e270c9d50

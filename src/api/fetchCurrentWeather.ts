@@ -1,6 +1,5 @@
 import { GeoLocationData } from '../hooks/useGeoLocation';
-
-const API_KEY = 'f8a3a62c1c7c7d8e39956c2e270c9d50'; //in production move this secret to a .env on the server that call the openweather api instead
+import { API_KEY } from '../utils';
 
 const fetchCurrentWeather = async (geoLocationData: GeoLocationData) => {
   if (geoLocationData.latitude === null || geoLocationData.longitude === null) {

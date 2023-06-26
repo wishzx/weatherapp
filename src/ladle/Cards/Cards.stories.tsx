@@ -1,7 +1,6 @@
 import React from 'react';
-
 import { Story } from '@ladle/react';
-import { Box, Card, Container, Group, Text } from '@mantine/core';
+import { Box, Container } from '@mantine/core';
 import WeatherGrid from '../../components/WeatherGrid';
 import WeatherCard from '../../components/WeatherCard';
 import ForecastCard from '../../components/ForecastCard';
@@ -35,5 +34,3 @@ export const ForeCastCard: Story = () => {
     </Container>
   );
 };
-
-

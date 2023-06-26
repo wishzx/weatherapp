@@ -16,11 +16,6 @@ interface CurrentWeatherProps {
 const CurrentWeather = (props: CurrentWeatherProps) => {
   const { data, isLoading, isError, refetch } = useCurrentWeather(props.locationData, props.locationPermission);
 
-  const onClick = () => {
-    notifications.clean();
-    void refetch();
-  };
-
   useEffect(() => {
     if (isError) {
       notifications.show({
@@ -39,29 +34,43 @@ const CurrentWeather = (props: CurrentWeatherProps) => {
     };
   }, [isError]);
 
+  const onClick = () => {
+    notifications.clean();
+    void refetch();
+  };
+
+  const showLoader = props.locationPermission === 'waiting' || isLoading;
+  const top = (
+    <Container>
+      {showLoader ? (
+        <Loader h={45} color={orangeCustom} variant="dots" size="xl" />
+      ) : (
+        <Title>{data?.name || '-'} </Title>
+      )}
+    </Container>
+  );
+  const showBottom = isError || !isLoading;
+  const bottom = (
+    <Container>
+      {showBottom && (
+        <Group>
+          <Text> {data?.dt && `last update ${getHourAndMinuteFromTimestamp(data.dt)}`} </Text>
+          <Tooltip label="openweathermap send you the same cached data every time after the first request for a while">
+            <ActionIcon disabled={isLoading} color="blue" variant="transparent" onClick={() => onClick()}>
+              <BiRefresh />
+            </ActionIcon>
+          </Tooltip>
+        </Group>
+      )}
+    </Container>
+  );
+
   return (
     <Container py={'10vh'} size={'sm'}>
       <Stack>
-        <Container>
-          {props.locationPermission === 'waiting' || isLoading ? (
-            <Loader h={45} color={orangeCustom} variant="dots" size="xl" />
-          ) : (
-            <Title>{data?.name || '-'} </Title>
-          )}
-        </Container>
+        {top}
         <WeatherGrid data={data} />
-        <Container>
-          {(isError || !isLoading) && (
-            <Group>
-              <Text> {data?.dt && `last update ${getHourAndMinuteFromTimestamp(data.dt)}`} </Text>
-              <Tooltip label="openweathermap send you the same cached data every time after the first request for a while">
-                <ActionIcon disabled={isLoading} color="blue" variant="transparent" onClick={() => onClick()}>
-                  <BiRefresh />
-                </ActionIcon>
-              </Tooltip>
-            </Group>
-          )}
-        </Container>
+        {bottom}
       </Stack>
     </Container>
   );
