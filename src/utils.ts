@@ -1,3 +1,5 @@
+import { QueryClient } from '@tanstack/react-query';
+
 export function getHourAndMinuteFromTimestamp(timestamp: number): string {
   const date = new Date(timestamp * 1000); // Convert Unix timestamp to milliseconds
 
@@ -6,3 +8,18 @@ export function getHourAndMinuteFromTimestamp(timestamp: number): string {
 
   return `${hour}:${minute}`;
 }
+export const orangeCustom = '#EC6E4C';
+
+export const theme = {
+  //headings: { fontFamily: 'sans-serif' },
+};
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 1000 * 60,
+      cacheTime: 5 * 1000 * 60,
+      refetchOnWindowFocus: false,
+    },
+  },
+});

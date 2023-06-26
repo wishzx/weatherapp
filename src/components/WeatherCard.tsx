@@ -7,7 +7,7 @@ import { BsSunset } from 'react-icons/bs';
 import { TbTemperature } from 'react-icons/tb';
 import { BsClouds } from 'react-icons/bs';
 import { MdOutlineVisibility } from 'react-icons/md';
-import { orangeCustom } from '../App';
+import { orangeCustom } from '../utils';
 
 interface WeatherCardProps {
   icon: IconType;

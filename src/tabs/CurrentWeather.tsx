@@ -6,7 +6,7 @@ import { getHourAndMinuteFromTimestamp } from '../utils';
 import { BiRefresh } from 'react-icons/bi';
 import { notifications } from '@mantine/notifications';
 import { useEffect } from 'react';
-import { orangeCustom } from '../App';
+import { orangeCustom } from '../utils';
 
 interface CurrentWeatherProps {
   locationData: GeoLocationData;
