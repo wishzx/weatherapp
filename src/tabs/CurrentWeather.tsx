@@ -54,7 +54,7 @@ const CurrentWeather = (props: CurrentWeatherProps) => {
           {(isError || !isLoading) && (
             <Group>
               <Text> {data?.dt && `last update ${getHourAndMinuteFromTimestamp(data.dt)}`} </Text>
-              <Tooltip label="openweathermap send you the same cached data every time after the first request">
+              <Tooltip label="openweathermap send you the same cached data every time after the first request for a while">
                 <ActionIcon disabled={isLoading} color="blue" variant="transparent" onClick={() => onClick()}>
                   <BiRefresh />
                 </ActionIcon>

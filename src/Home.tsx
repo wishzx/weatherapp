@@ -6,33 +6,36 @@ import { LuCalendarDays } from 'react-icons/lu';
 import { BsHourglass } from 'react-icons/bs';
 import ForecastWeather from './tabs/ForecastWeather';
 import CurrentWeather from './tabs/CurrentWeather';
+import { useEffect } from 'react';
 
 const Home = () => {
   const { locationData, locationPermission } = useGeoLocation();
 
-  if (locationPermission === 'denied') {
-    notifications.clean();
-    notifications.show({
-      title: 'Geolocation denied',
-      message:
-        "You denied the permission to share your location. This website doen't function properly without It. Refresh the page if you change your mind.",
-      autoClose: false,
-      color: 'red',
-      withBorder: true,
-      withCloseButton: false,
-    });
-  }
-  if (locationPermission === 'unsupported') {
-    notifications.clean();
-    notifications.show({
-      title: 'Geolocation not supported',
-      message: "Your browser doesn't support geolocation, please try with another one",
-      autoClose: false,
-      color: 'red',
-      withBorder: true,
-      withCloseButton: false,
-    });
-  }
+  useEffect(() => {
+    if (locationPermission === 'denied') {
+      notifications.clean();
+      notifications.show({
+        title: 'Geolocation denied',
+        message:
+          "You denied the permission to share your location. This website won't function properly without It. Refresh the page if you change your mind.",
+        autoClose: false,
+        color: 'red',
+        withBorder: true,
+        withCloseButton: false,
+      });
+    }
+    if (locationPermission === 'unsupported') {
+      notifications.clean();
+      notifications.show({
+        title: 'Geolocation not supported',
+        message: "Your browser doesn't support geolocation, please try with another one",
+        autoClose: false,
+        color: 'red',
+        withBorder: true,
+        withCloseButton: false,
+      });
+    }
+  }, [locationPermission]);
 
   const config = {
     iconSize: '0.8rem',
