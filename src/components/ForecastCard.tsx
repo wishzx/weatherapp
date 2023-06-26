@@ -27,29 +27,31 @@ export const ForecastCard = (props: ForecastCardProps) => {
 
   return (
     <>
-      <Group position="apart" px={15}>
-        <Text c="blue.2">{formattedDate} </Text>
-        <Text c="blue.2">{formattedTime} </Text>
-      </Group>
-      <Stack
-        spacing={1}
-        sx={(theme) => ({
-          textAlign: 'center',
-          alignItems: 'center',
-          borderRadius: theme.radius.sm,
-          borderWidth: '2px',
-          borderColor: theme.colors.gray[2],
-          borderStyle: 'solid',
-        })}
-      >
-        <Box>{IconComponent}</Box>
-        <Stack spacing={0}>
-          <Title order={6}>{props.subtitle || 'Clear Sky'}</Title>
-          <Text size={12} c="dimmed" truncate>
-            {props.title || '38 °C'}
-          </Text>
+      <Box>
+        <Stack
+          spacing={1}
+          sx={(theme) => ({
+            textAlign: 'center',
+            alignItems: 'center',
+            borderRadius: theme.radius.sm,
+            borderWidth: '2px',
+            borderColor: theme.colors.gray[2],
+            borderStyle: 'solid',
+          })}
+        >
+          <Group position="apart" px={15}>
+            <Text c="blue.2">{formattedDate} </Text>
+            <Text c="blue.2">{formattedTime} </Text>
+          </Group>
+          <Box>{IconComponent}</Box>
+          <Stack spacing={0}>
+            <Title order={6}>{props.subtitle || 'Clear Sky'}</Title>
+            <Text size={12} c="dimmed" truncate>
+              {props.title || '38'} °C
+            </Text>
+          </Stack>
         </Stack>
-      </Stack>
+      </Box>
     </>
   );
 };
