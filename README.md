@@ -1,8 +1,8 @@
-#DEMO
+# DEMO
 
 https://weatherapp-5d0b9.web.app/
 
-#TODO
+# TODO
 - Daily notifications of weather in current location.
 - Testing:
    End-to-end.
